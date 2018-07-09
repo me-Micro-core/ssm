@@ -1,0 +1,11 @@
+參考地址：https://blog.csdn.net/hong10086/article/details/54907432
+
+在客户端生成本地服务类，可以使用"wsdl2java.bat"的工具，也可以利用Java自带的方式生成WS客户端文件。这里我们使用Java自带的wsimport命令。
+http://localhost:8080/ssm/ws/books?wsdl
+
+wsimport  -d /home/guoru/ws -keep -encoding utf-8 -p com.demo.lyf.client http://localhost:8080/ssm/ws/books?wsdl
+
+-d <directory>                   指定放置生成的输出文件的位置
+ -encoding <encoding>      指定源文件所使用的字符编码
+ -keep                                保留生成的文件
+ -p <pkg>                           指定目标程序包

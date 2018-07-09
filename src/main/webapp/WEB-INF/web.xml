@@ -4,20 +4,39 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1" metadata-complete="true">
 	<!-- 如果是用mvn命令生成的xml，需要修改servlet版本为3.1 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring/spring-*.xml,classpath:cxf/spring-cxf.xml</param-value>
+    </context-param>
 	<!-- 配置DispatcherServlet -->
 	<servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<!-- 配置springMVC需要加载的配置文件 spring-dao.xml,spring-service.xml,spring-web.xml 
-			Mybatis - > spring -> springmvc -->
+		<!--配置springMVC需要加载的配置文件 spring-dao.xml,spring-service.xml,spring-web.xml-->
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:spring/spring-*.xml</param-value>
+			<param-value>classpath:spring/spring-web.xml</param-value>
 		</init-param>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>mvc-dispatcher</servlet-name>
-		<!-- 默认匹配所有的请求 -->
-		<url-pattern>/</url-pattern>
+		<!--默认匹配所有的请求-->
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+	<servlet>
+		<servlet-name>CXFServlet</servlet-name>
+		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CXFServlet</servlet-name>
+		<url-pattern>/ws/*</url-pattern>
 	</servlet-mapping>
 </web-app>
