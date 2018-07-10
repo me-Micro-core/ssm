@@ -10,7 +10,7 @@ import javax.xml.namespace.QName;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the com.soecode.lyf.client package. 
+ * generated in the com.demo.lyf.client package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -28,7 +28,7 @@ public class ObjectFactory {
     private final static QName _HelloWordResponse_QNAME = new QName("http://cxf.lyf.soecode.com/", "helloWordResponse");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.soecode.lyf.client
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.demo.lyf.client
      * 
      */
     public ObjectFactory() {

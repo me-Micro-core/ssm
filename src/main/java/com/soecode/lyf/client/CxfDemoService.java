@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CxfDemoService", targetNamespace = "http://cxf.lyf.soecode.com/", wsdlLocation = "http://localhost:9090/ssm/ws/books?wsdl")
+@WebServiceClient(name = "CxfDemoService", targetNamespace = "http://cxf.lyf.soecode.com/", wsdlLocation = "http://localhost:8080/ssm/ws/books?wsdl")
 public class CxfDemoService
     extends Service
 {
@@ -30,7 +30,7 @@ public class CxfDemoService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:9090/ssm/ws/books?wsdl");
+            url = new URL("http://localhost:8080/ssm/ws/books?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
@@ -75,7 +75,7 @@ public class CxfDemoService
     /**
      * 
      * @param features
-     *     A list of {@link WebServiceFeature} to configure on the proxy.  Supported features not in the <code>features</code> parameter will have their default values.
+     *     A list of {@link javax.xml.ws.WebServiceFeature} to configure on the proxy.  Supported features not in the <code>features</code> parameter will have their default values.
      * @return
      *     returns CxfDemo
      */

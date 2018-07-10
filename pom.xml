@@ -183,7 +183,7 @@
 						<path>/ssm</path>
 						<!--<mode>context</mode>
 						<contextFile>src/main/webapp/WEB-INF/context.xml</contextFile>-->
-						<port>8080</port>
+						<port>9090</port>
 					</configuration>
 				</plugin>
 				<plugin>

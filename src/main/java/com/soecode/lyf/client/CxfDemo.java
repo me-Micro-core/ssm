@@ -31,10 +31,10 @@ public interface CxfDemo {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "helloWord", targetNamespace = "http://cxf.lyf.soecode.com/", className = "com.soecode.lyf.client.HelloWord")
-    @ResponseWrapper(localName = "helloWordResponse", targetNamespace = "http://cxf.lyf.soecode.com/", className = "com.soecode.lyf.client.HelloWordResponse")
+    @RequestWrapper(localName = "helloWord", targetNamespace = "http://cxf.lyf.soecode.com/", className = "com.demo.lyf.client.HelloWord")
+    @ResponseWrapper(localName = "helloWordResponse", targetNamespace = "http://cxf.lyf.soecode.com/", className = "com.demo.lyf.client.HelloWordResponse")
     public String helloWord(
-            @WebParam(name = "userName", targetNamespace = "")
-                    String userName);
+        @WebParam(name = "userName", targetNamespace = "")
+        String userName);
 
 }
